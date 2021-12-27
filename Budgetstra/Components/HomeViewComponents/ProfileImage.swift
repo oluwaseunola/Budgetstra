@@ -11,19 +11,23 @@ struct ProfileImage: View {
     var imageURL : String
     
     var body: some View {
-        AsyncImage(url: URL(string: imageURL)) { image in
-            
-            image
-                .resizable().aspectRatio(contentMode:.fit)
-                .mask(Circle())
+        if #available(iOS 15.0, *) {
+            AsyncImage(url: URL(string: imageURL)) { image in
+                
+                image
+                    .resizable().aspectRatio(contentMode:.fit)
+                    .mask(Circle())
                 
                 
-            
-        } placeholder: {
-            Image(systemName: "person").font(.system(size: 40))
-                .mask(Circle())
-                .overlay(Circle().stroke())
-        }.frame(width:100, height: 100).shadow(color: Color.indigo.opacity(0.6), radius: 15, x: 10, y: 10)
+                
+            } placeholder: {
+                Image(systemName: "person").font(.system(size: 40))
+                    .mask(Circle())
+                    .overlay(Circle().stroke())
+            }.frame(width:100, height: 100).shadow(color: Color.indigo.opacity(0.6), radius: 15, x: 10, y: 10)
+        } else {
+            // Fallback on earlier versions
+        }
             
 
     }

@@ -6,3 +6,10 @@
 //
 
 import Foundation
+import UIKit
+
+struct HapticManager{
+    
+    static let haptic = UIImpactFeedbackGenerator(style: .light)
+    
+}

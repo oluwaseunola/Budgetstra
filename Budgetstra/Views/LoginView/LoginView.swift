@@ -19,15 +19,23 @@ struct LoginView: View {
             
             VStack(alignment:.leading){
                 Text("Please login to your account")
-                TextField("Username", text: $userName, prompt: Text("  Enter your email")).frame(maxWidth:.infinity)
-                    .frame(height: 50)
-                    .mask(RoundedRectangle(cornerRadius: 20, style: .continuous))
-                    .overlay(RoundedRectangle(cornerRadius: 20, style: .continuous).stroke())
+                if #available(iOS 15.0, *) {
+                    TextField("Username", text: $userName, prompt: Text("  Enter your email")).frame(maxWidth:.infinity)
+                        .frame(height: 50)
+                        .mask(RoundedRectangle(cornerRadius: 20, style: .continuous))
+                        .overlay(RoundedRectangle(cornerRadius: 20, style: .continuous).stroke())
+                } else {
+                    // Fallback on earlier versions
+                }
                 
-                SecureField("Password", text: $password, prompt: Text("  Password")).frame(maxWidth:.infinity)
-                    .frame(height: 50)
-                    .mask(RoundedRectangle(cornerRadius: 20, style: .continuous))
-                    .overlay(RoundedRectangle(cornerRadius: 20, style: .continuous).stroke())
+                if #available(iOS 15.0, *) {
+                    SecureField("Password", text: $password, prompt: Text("  Password")).frame(maxWidth:.infinity)
+                        .frame(height: 50)
+                        .mask(RoundedRectangle(cornerRadius: 20, style: .continuous))
+                        .overlay(RoundedRectangle(cornerRadius: 20, style: .continuous).stroke())
+                } else {
+                    // Fallback on earlier versions
+                }
                 
                 Button {
                     

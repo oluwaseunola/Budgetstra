@@ -9,9 +9,10 @@ import SwiftUI
 
 @main
 struct BudgetstraApp: App {
+    @StateObject var listViewModel = ListViewModel()
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView().environmentObject(listViewModel)
         }
     }
 }

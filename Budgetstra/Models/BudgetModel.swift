@@ -6,3 +6,20 @@
 //
 
 import Foundation
+
+struct BudgetModel:Identifiable {
+    
+    var id = UUID()
+    var title : String
+    var budget : Double
+    var spent : Double?
+    
+}
+
+struct SavingsModel {
+    
+    var title : String
+    var total : Double
+    var saved : Double?
+    
+}

@@ -6,10 +6,12 @@
 //
 
 import Foundation
+
 enum TabType: String{
     
     case home,budget,graph,account
 }
+
 struct TabModel : Identifiable{
     var id = UUID()
     var title : String

@@ -8,74 +8,37 @@
 import SwiftUI
 
 struct ListView: View {
+    @EnvironmentObject var listViewModel : ListViewModel
+    @Binding var isSearching : Bool
     
-    init(){
+    init(isSearching: Binding<Bool>){
+        
+        self._isSearching = isSearching
         
         UITableView.appearance().backgroundColor = UIColor.white.withAlphaComponent(0.3)
         
         UITableView.appearance().showsVerticalScrollIndicator = false
+        
     }
     
     var body: some View {
         
-        List(mockTransactions, id:\.id){ transaction in
+        List(isSearching ? listViewModel.filteredTransactions : listViewModel.mockTransactions, id:\.id){ transaction in
             
-            HStack{
-                
-                switch transaction.category{
+                HStack{
                     
-                case.donation:
-                    TransactionImage(imageName: "give", color: "give")
-                case .foodDrink:
-                    TransactionImage(imageName: "food", color: "food")
-                case .investment:
-                    TransactionImage(imageName: "invest", color: "invest")
-
-                case .bill:
-                    TransactionImage(imageName: "bill", color: "bill")
-
-                case .entertainment:
-                    TransactionImage(imageName: "entertain", color: "entertain")
-
-                case .travel:
-                    TransactionImage(imageName: "travel", color: "travel")
-
-                case .automotiveExpense:
-                    TransactionImage(imageName: "auto", color: "auto")
-
-                case .education:
-                    TransactionImage(imageName: "education", color: "education")
-
-                case .groceries:
-                    TransactionImage(imageName: "grocery", color: "grocery")
-
-                case .pay:
-                    TransactionImage(imageName: "pay", color: "pay")
-
-                case .pets:
-                    TransactionImage(imageName: "pet", color: "pet")
-
-                case .savings:
-                    TransactionImage(imageName: "saving", color: "saving")
-
-                case .clothing:
-                    TransactionImage(imageName: "clothing", color: "clothing")
-
-                case .healthCare:
-                    TransactionImage(imageName: "health", color: "health")
-
+                    TransactionImage(imageName: transaction.category.rawValue, color: transaction.category.rawValue)
+                    
+                    Text(transaction.category.rawValue).font(.custom(FontManager.medium, size: 20))
+                   
+                    Spacer()
+                    
+                    Text("\(String(format: "%.2f", transaction.value))").font(.custom(FontManager.bold, size: 20)).foregroundColor(transaction.category == .pay ? .green : .red)
+                    
                 }
-                
-                
-                Text(transaction.category.rawValue).font(.custom(FontManager.medium, size: 20))
-               
-                Spacer()
-                
-                Text("\(transaction.value)").font(.custom(FontManager.bold, size: 20)).foregroundColor(transaction.category == .pay ? .green : .red)
-                
-            }
-            .listRowBackground(Color.clear).padding(.top).padding(.bottom)
+                .listRowBackground(Color.clear).padding(.top).padding(.bottom)
             
+
             
             
         }
@@ -88,6 +51,6 @@ struct ListView: View {
 
 struct ListView_Previews: PreviewProvider {
     static var previews: some View {
-        ListView()
+        ListView(isSearching: .constant(false)).environmentObject(ListViewModel())
     }
 }

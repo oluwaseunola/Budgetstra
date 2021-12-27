@@ -8,13 +8,46 @@
 import SwiftUI
 
 struct BudgetComponent_: View {
+    
+    @State var title : String
+    @State var budget : Double
+    @State var spent : Double?
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+HStack{
+    
+    TransactionImage(imageName: "Pay", color: "Pay")
+    
+    VStack(alignment:.leading){
+            
+            Text(title).lineLimit(1)
+                .font(.custom(FontManager.extraBold, size: 12))
+            
+            HStack{
+                
+                Text("$\(String(format: "%.2f", spent ?? 0)) used").lineLimit(1)
+                    .font(.custom(FontManager.medium, size: 12))
+                
+                Spacer()
+                
+                Text("$\(String(format: "%.2f", budget))").lineLimit(1)
+                    .font(.custom(FontManager.extraBold, size: 12))
+                
+            }
+            
+            
+        ProgressView(value: (spent ?? 0)/budget)
+            
+        }
+    
+}.frame(maxWidth:.infinity).frame(height:120).padding(.horizontal).overlay(RoundedRectangle(cornerRadius: 12, style: .continuous).stroke().opacity(0.3))
+
     }
 }
 
 struct BudgetComponent__Previews: PreviewProvider {
     static var previews: some View {
-        BudgetComponent_()
+        BudgetComponent_(title: "Monthly Limit", budget: 5000)
     }
 }
