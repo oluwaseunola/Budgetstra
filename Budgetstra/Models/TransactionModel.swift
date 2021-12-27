@@ -11,15 +11,17 @@ struct TransactionModel: Identifiable, Decodable {
     
     var id = UUID()
     var category : TransactionCategory
-    var value : Int
+    var value : Double
     
 
     
 }
 
-enum TransactionCategory : String, Decodable {
+enum TransactionCategory : String, Decodable,CaseIterable {
+
+    case automotiveExpense = "Automotive Expense", bill = "Bill", clothing = "Clothing", donation = "Charity",education = "Education", entertainment = "Entertainment",foodDrink = "Food & Drink",groceries = "Groceries",healthCare = "Healthcare",investment = "Investment", pay = "Pay", pets = "Pets", travel = "Travel", savings = "Savings"
     
-case foodDrink = "Food & Drink", investment = "Investment", bill = "Bill", entertainment = "Entertainment", donation = "Charity", travel = "Travel", automotiveExpense = "Automotive Expense", education = "Education", groceries = "Groceries", pay = "Pay", pets = "Pets", savings = "Savings", clothing = "Clothing", healthCare = "Healthcare"
+ 
     
     
 }

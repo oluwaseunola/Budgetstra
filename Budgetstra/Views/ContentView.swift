@@ -10,13 +10,20 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         ZStack {
-            Color("backgroundColor1").ignoresSafeArea()
             
-            VStack {
-                SlidingContent()
-                Spacer()
-                LoginCard()
-            }
+            
+            
+            
+            
+            
+            
+            
+            
+//            VStack {
+//                SlidingContent()
+//                Spacer()
+//                LoginCard()
+//            }
         }
     }
 
