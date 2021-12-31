@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct BudgetView: View {
-    @StateObject var budgetViewModel = BudgetViewModel()
+    @EnvironmentObject var budgetViewModel : BudgetViewModel
+    @State var updateBudgetIsPresented  = false
+    @State var currentBudget : BudgetModel = BudgetModel(title: "", budget: 0)
     
     init(){
         
@@ -31,6 +33,39 @@ struct BudgetView: View {
                     ForEach(budgetViewModel.budgets, id: \.id) { budget in
                         
                         BudgetComponent_(title: budget.title, budget: budget.budget, spent: budget.spent)
+                            .swipeActions(edge: .trailing, allowsFullSwipe: true) {
+                            
+                                Button(role: .destructive) {
+                                    withAnimation(.easeInOut) {
+                                        budgetViewModel.deleteBudget(deletedObject: budget)
+                                    }
+                                } label: {
+                                                                        Image(systemName: "trash")
+
+                                }
+                                
+                                Button {
+//                                Edit budget
+                                } label: {
+                                    Image(systemName: "pencil")
+                                }.tint(.yellow)
+
+
+                                
+
+                        }
+                            .onTapGesture {
+                                
+                                
+                                currentBudget = budget
+                                
+                                withAnimation(.easeInOut) {
+                                    updateBudgetIsPresented = true
+
+                                }
+                                
+                                
+                            }
                         
                     }.listRowBackground(Color.clear)
 
@@ -38,12 +73,14 @@ struct BudgetView: View {
                 }.mask(RoundedRectangle(cornerRadius: 30, style: .continuous))
                     
                 
-               
-                
-                
                 
             }.padding(.horizontal).padding(.top,50)
             
+            
+            if updateBudgetIsPresented {
+                
+                UpdateBudget(budget: $currentBudget, isPresented: $updateBudgetIsPresented)
+            }
             
         }
     }
@@ -51,6 +88,6 @@ struct BudgetView: View {
 
 struct BudgetView_Previews: PreviewProvider {
     static var previews: some View {
-        BudgetView()
+        BudgetView().environmentObject(BudgetViewModel())
     }
 }

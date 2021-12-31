@@ -37,9 +37,22 @@ struct ListView: View {
                     
                 }
                 .listRowBackground(Color.clear).padding(.top).padding(.bottom)
+                .swipeActions(edge: .trailing, allowsFullSwipe: true) {
+                
+                    Button (role:.destructive){
+                    
+                    withAnimation(.easeInOut) {
+                        listViewModel.deleteTransaction(deletedObject: transaction)
+                    }
+                    
             
+                } label: {
+                  
+                        Image(systemName: "trash")
 
-            
+                }
+            }
+             
             
         }
             .frame(height:300)

@@ -92,5 +92,22 @@ class ListViewModel : ObservableObject {
     }
     
     
+    func deleteTransaction(deletedObject: TransactionModel){
+       
+        var counter = 0
+        
+        for transaction in mockTransactions{
+            counter += 1
+            
+            if transaction.id == deletedObject.id{
+                
+                mockTransactions.remove(at: counter - 1)
+                
+            }
+            
+        }
+        
+    }
+    
     
 }

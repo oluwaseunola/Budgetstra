@@ -12,6 +12,7 @@ struct CustomTabBar: View {
     @State var bounce : Bool = false
     @State var newTransationWindowIsPresented = false
     @State var newBudgetWindowIsPresented = false
+    @StateObject var budgetViewModel = BudgetViewModel()
 
     
     
@@ -25,7 +26,7 @@ struct CustomTabBar: View {
             case .home:
                 HomeView()
             case .budget:
-                BudgetView()
+                BudgetView().environmentObject(budgetViewModel)
             case .graph:
                 GraphView()
             case .account:
@@ -137,7 +138,7 @@ struct CustomTabBar: View {
             
             if newBudgetWindowIsPresented{
                 
-                NewBudget(isPresented:$newBudgetWindowIsPresented)
+                NewBudget(isPresented:$newBudgetWindowIsPresented).environmentObject(budgetViewModel)
             }
             
             

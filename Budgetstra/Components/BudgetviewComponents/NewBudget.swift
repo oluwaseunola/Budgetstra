@@ -12,7 +12,7 @@ struct NewBudget: View {
     @State var amountLabel  = ""
     @State var titleLabel = ""
     @State var selectedCategory : TransactionCategory = .automotiveExpense
-    @EnvironmentObject var listViewModel : ListViewModel
+    @EnvironmentObject var budgetViewModel : BudgetViewModel
 //    @FocusState var isFocused : Bool
     
     var body: some View {
@@ -80,7 +80,7 @@ struct NewBudget: View {
                     
                     Button {
                                                 
-                        listViewModel.addNewTransaction(object: TransactionModel(category: selectedCategory, value: Double(amountLabel) ?? 0) )
+                        budgetViewModel.addNewBudget(budgetObject: BudgetModel(title: titleLabel, budget: Double(amountLabel) ?? 0))
                         
                         isPresented = false
                         
@@ -124,7 +124,7 @@ struct NewBudget: View {
 
 struct NewBudget_Previews: PreviewProvider {
     static var previews: some View {
-        NewBudget(isPresented: .constant(true)).environmentObject(ListViewModel())
+        NewBudget(isPresented: .constant(true)).environmentObject(BudgetViewModel())
     }
 }
 
