@@ -49,6 +49,7 @@
 		295E890C276016FC006DCC27 /* IncomeExpense.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295E890B276016FC006DCC27 /* IncomeExpense.swift */; };
 		295E89102760246B006DCC27 /* TransactionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295E890F2760246B006DCC27 /* TransactionModel.swift */; };
 		295E8912276028F4006DCC27 /* DateTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295E8911276028F4006DCC27 /* DateTitle.swift */; };
+		2967F760277F6CB200196B10 /* BudgetstraTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2967F75F277F6CB200196B10 /* BudgetstraTests.swift */; };
 		2969AFC6275CA20400A2F820 /* BudgetstraApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2969AFC5275CA20400A2F820 /* BudgetstraApp.swift */; };
 		2969AFC8275CA20400A2F820 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2969AFC7275CA20400A2F820 /* ContentView.swift */; };
 		2969AFCA275CA20600A2F820 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2969AFC9275CA20600A2F820 /* Assets.xcassets */; };
@@ -64,6 +65,16 @@
 		29B913BD27627F8F0070DF51 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B913BC27627F8F0070DF51 /* GraphView.swift */; };
 		29B913BF27627F9C0070DF51 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B913BE27627F9C0070DF51 /* AccountView.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2967F761277F6CB200196B10 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2969AFBA275CA20300A2F820 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2969AFC1275CA20400A2F820;
+			remoteInfo = Budgetstra;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		292DA8D42776511900B6F647 /* BudgetComponent .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BudgetComponent .swift"; sourceTree = "<group>"; };
@@ -109,6 +120,8 @@
 		295E890B276016FC006DCC27 /* IncomeExpense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeExpense.swift; sourceTree = "<group>"; };
 		295E890F2760246B006DCC27 /* TransactionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionModel.swift; sourceTree = "<group>"; };
 		295E8911276028F4006DCC27 /* DateTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTitle.swift; sourceTree = "<group>"; };
+		2967F75D277F6CB200196B10 /* BudgetstraTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BudgetstraTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2967F75F277F6CB200196B10 /* BudgetstraTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetstraTests.swift; sourceTree = "<group>"; };
 		2969AFC2275CA20400A2F820 /* Budgetstra.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Budgetstra.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2969AFC5275CA20400A2F820 /* BudgetstraApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BudgetstraApp.swift; path = "../New Group/BudgetstraApp.swift"; sourceTree = "<group>"; };
 		2969AFC7275CA20400A2F820 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -127,6 +140,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		2967F75A277F6CB200196B10 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2969AFBF275CA20400A2F820 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -235,10 +255,19 @@
 			path = HomeViewComponents;
 			sourceTree = "<group>";
 		};
+		2967F75E277F6CB200196B10 /* BudgetstraTests */ = {
+			isa = PBXGroup;
+			children = (
+				2967F75F277F6CB200196B10 /* BudgetstraTests.swift */,
+			);
+			path = BudgetstraTests;
+			sourceTree = "<group>";
+		};
 		2969AFB9275CA20300A2F820 = {
 			isa = PBXGroup;
 			children = (
 				2969AFC4275CA20400A2F820 /* Budgetstra */,
+				2967F75E277F6CB200196B10 /* BudgetstraTests */,
 				2969AFC3275CA20400A2F820 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -247,6 +276,7 @@
 			isa = PBXGroup;
 			children = (
 				2969AFC2275CA20400A2F820 /* Budgetstra.app */,
+				2967F75D277F6CB200196B10 /* BudgetstraTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -340,6 +370,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		2967F75C277F6CB200196B10 /* BudgetstraTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2967F765277F6CB200196B10 /* Build configuration list for PBXNativeTarget "BudgetstraTests" */;
+			buildPhases = (
+				2967F759277F6CB200196B10 /* Sources */,
+				2967F75A277F6CB200196B10 /* Frameworks */,
+				2967F75B277F6CB200196B10 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2967F762277F6CB200196B10 /* PBXTargetDependency */,
+			);
+			name = BudgetstraTests;
+			productName = BudgetstraTests;
+			productReference = 2967F75D277F6CB200196B10 /* BudgetstraTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		2969AFC1275CA20400A2F820 /* Budgetstra */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2969AFD0275CA20600A2F820 /* Build configuration list for PBXNativeTarget "Budgetstra" */;
@@ -364,9 +412,13 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1310;
+				LastSwiftUpdateCheck = 1320;
 				LastUpgradeCheck = 1310;
 				TargetAttributes = {
+					2967F75C277F6CB200196B10 = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = 2969AFC1275CA20400A2F820;
+					};
 					2969AFC1275CA20400A2F820 = {
 						CreatedOnToolsVersion = 13.1;
 					};
@@ -386,11 +438,19 @@
 			projectRoot = "";
 			targets = (
 				2969AFC1275CA20400A2F820 /* Budgetstra */,
+				2967F75C277F6CB200196B10 /* BudgetstraTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		2967F75B277F6CB200196B10 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2969AFC0275CA20400A2F820 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -425,6 +485,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		2967F759277F6CB200196B10 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2967F760277F6CB200196B10 /* BudgetstraTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2969AFBE275CA20400A2F820 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -466,7 +534,53 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		2967F762277F6CB200196B10 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2969AFC1275CA20400A2F820 /* Budgetstra */;
+			targetProxy = 2967F761277F6CB200196B10 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		2967F763277F6CB200196B10 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QTC9TXRFDC;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = co.llamastudios.BudgetstraTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Budgetstra.app/Budgetstra";
+			};
+			name = Debug;
+		};
+		2967F764277F6CB200196B10 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QTC9TXRFDC;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = co.llamastudios.BudgetstraTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Budgetstra.app/Budgetstra";
+			};
+			name = Release;
+		};
 		2969AFCE275CA20600A2F820 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -648,6 +762,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		2967F765277F6CB200196B10 /* Build configuration list for PBXNativeTarget "BudgetstraTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2967F763277F6CB200196B10 /* Debug */,
+				2967F764277F6CB200196B10 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2969AFBD275CA20300A2F820 /* Build configuration list for PBXProject "Budgetstra" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

@@ -54,3 +54,9 @@ class BudgetViewModel : ObservableObject{
     
     
 }
+
+enum BudgetViewTab {
+    
+    case budget,saving
+    
+}
