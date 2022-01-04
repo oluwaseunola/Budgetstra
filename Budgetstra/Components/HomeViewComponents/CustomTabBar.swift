@@ -13,6 +13,7 @@ struct CustomTabBar: View {
     @State var newTransationWindowIsPresented = false
     @State var newBudgetWindowIsPresented = false
     @StateObject var budgetViewModel = BudgetViewModel()
+    @StateObject var graphViewModel = GraphViewModel()
 
     
     
@@ -28,7 +29,7 @@ struct CustomTabBar: View {
             case .budget:
                 BudgetView().environmentObject(budgetViewModel)
             case .graph:
-                GraphView()
+                GraphView().environmentObject(graphViewModel)
             case .account:
                 AccountView()
             }
@@ -65,22 +66,6 @@ struct CustomTabBar: View {
                         Menu {
                             
                             Button {
-                                
-                                HapticManager.haptic.impactOccurred()
-
-                                currentTab = .home
-                                
-                                withAnimation(.linear) {
-                                    newTransationWindowIsPresented = true
-                                    
-                                }
-                                
-                                
-                            } label: {
-                                Text("Add transaction")
-                            }
-                            
-                            Button {
                                 HapticManager.haptic.impactOccurred()
 
                                 currentTab = .budget
@@ -94,6 +79,22 @@ struct CustomTabBar: View {
                             } label: {
                                 Text("Add budget")
 
+                            }
+                            
+                            Button {
+                                
+                                HapticManager.haptic.impactOccurred()
+
+                                currentTab = .home
+                                
+                                withAnimation(.linear) {
+                                    newTransationWindowIsPresented = true
+                                    
+                                }
+                                
+                                
+                            } label: {
+                                Text("Add transaction")
                             }
 
 

@@ -23,7 +23,7 @@ struct ListView: View {
     
     var body: some View {
         
-        List(isSearching ? listViewModel.filteredTransactions : listViewModel.mockTransactions, id:\.id){ transaction in
+        List(isSearching ? listViewModel.filteredTransactions.reversed() : listViewModel.mockTransactions.reversed(), id:\.id){ transaction in
             
                 HStack{
                     
@@ -58,6 +58,7 @@ struct ListView: View {
             .frame(height:300)
             .frame(maxWidth:.infinity)
             .mask(RoundedRectangle(cornerRadius: 30, style: .continuous))
+            
             
     }
 }

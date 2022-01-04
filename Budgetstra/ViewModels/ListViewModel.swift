@@ -17,14 +17,17 @@ class ListViewModel : ObservableObject {
     
     
     init(){
-        updateIncome()
-        updateExpenses()
-        calculateGross()
+       updateAll()
     }
     
     func addNewTransaction(object: TransactionModel){
         
         mockTransactions.append(object)
+        updateAll()
+        
+    }
+    
+    func updateAll(){
         updateIncome()
         updateExpenses()
         calculateGross()
@@ -106,6 +109,8 @@ class ListViewModel : ObservableObject {
             }
             
         }
+        
+        updateAll()
         
     }
     

@@ -10,12 +10,14 @@ import SwiftUI
 struct BudgetView: View {
     @EnvironmentObject var budgetViewModel : BudgetViewModel
     @State var updateBudgetIsPresented  = false
+    @State var updateSavingIsPresented  = false
     @State var currentBudget : BudgetModel = BudgetModel(title: "", budget: 0)
+    @State var currentSaving : SavingsModel = SavingsModel(title: "", total: 0)
     @State private var currentTab : BudgetViewTab = .budget
     
     init(){
         
-        UITableView.appearance().backgroundColor = UIColor.white
+        UITableView.appearance().backgroundColor = UIColor.white.withAlphaComponent(0.7)
         
         UITableView.appearance().showsVerticalScrollIndicator = false
     }
@@ -34,11 +36,14 @@ GeometryReader { geometry in
                 
                 ZStack(alignment:.top){
                     
-                    List{
+                    
+                    if currentTab == .budget{
+                        
+                        List{
                     
                     ForEach(budgetViewModel.budgets, id: \.id) { budget in
                         
-                        BudgetComponent_(title: budget.title, budget: budget.budget, spent: budget.spent)
+                        BudgetComponent_(title: budget.title, budget: budget.budget, spent: budget.spent, currentTab: $currentTab)
                             .swipeActions(edge: .trailing, allowsFullSwipe: true) {
                             
                                 Button(role: .destructive) {
@@ -78,12 +83,63 @@ GeometryReader { geometry in
                     
                     }.frame(height:geometry.size.height*0.75)
                         .offset(x: 0, y: 45)
+                        
+                    } else {
+                        
+                        List{
+                        
+                        ForEach(budgetViewModel.savings, id: \.id) { saving in
+                            
+                            BudgetComponent_(title: saving.title, budget: saving.total, spent: saving.saved, currentTab: $currentTab)
+                                .swipeActions(edge: .trailing, allowsFullSwipe: true) {
+                                
+                                    Button(role: .destructive) {
+                                        withAnimation(.easeInOut) {
+                                            budgetViewModel.deleteSaving(deletedObject: saving)
+                                        }
+                                    } label: {
+                                                                            Image(systemName: "trash")
+
+                                    }
+                                    
+                                    Button {
+    //                                Edit budget
+                                    } label: {
+                                        Image(systemName: "pencil")
+                                    }.tint(.yellow)
+
+
+                                    
+
+                            }
+                                .onTapGesture {
+                                    
+                                    
+                                    currentSaving = saving
+                                    
+                                    withAnimation(.easeInOut) {
+                                        updateSavingIsPresented = true
+
+                                    }
+                                    
+                                    
+                                }
+                            
+                        }.listRowBackground(Color.clear)
+
+                        
+                        }.frame(height:geometry.size.height*0.75)
+                            .offset(x: 0, y: 45)
+
+                    }
                     
                     
                         
                         HStack(spacing: geometry.size.width/3){
                            
                             Button {
+                                HapticManager.haptic.impactOccurred()
+                                
                                 withAnimation(.linear) {
                                     currentTab = .budget
 
@@ -99,7 +155,8 @@ GeometryReader { geometry in
                             }
 
                             Button {
-                                
+                                HapticManager.haptic.impactOccurred()
+
                                 withAnimation(.linear) {
                                     currentTab = .saving
 

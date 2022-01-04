@@ -10,6 +10,7 @@ import Foundation
 class BudgetViewModel : ObservableObject{
     
     @Published var budgets : [BudgetModel] = [BudgetModel(title: "December Budget", budget: 5000, spent: 1500)]
+    @Published var savings : [SavingsModel] = [SavingsModel(title: "MacBook", total: 2600, saved: 250)]
     
     func addNewBudget(budgetObject: BudgetModel){
         
@@ -51,6 +52,22 @@ class BudgetViewModel : ObservableObject{
         
     }
     
+    func deleteSaving(deletedObject: SavingsModel){
+       
+        var counter = 0
+        
+        for saving in savings{
+            counter += 1
+            
+            if saving.id == deletedObject.id{
+                
+                savings.remove(at: counter - 1)
+                
+            }
+            
+        }
+        
+    }
     
     
 }

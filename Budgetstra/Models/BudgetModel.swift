@@ -16,8 +16,9 @@ struct BudgetModel:Identifiable {
     
 }
 
-struct SavingsModel {
+struct SavingsModel:Identifiable {
     
+    var id = UUID()
     var title : String
     var total : Double
     var saved : Double?

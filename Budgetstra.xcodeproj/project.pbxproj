@@ -11,7 +11,6 @@
 		292DA8D72776518D00B6F647 /* BudgetViewMoel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292DA8D62776518D00B6F647 /* BudgetViewMoel.swift */; };
 		292DA8D92776526A00B6F647 /* BudgetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292DA8D82776526A00B6F647 /* BudgetModel.swift */; };
 		292DA8DD277A60C100B6F647 /* NewBudget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292DA8DC277A60C100B6F647 /* NewBudget.swift */; };
-		292DA8E0277A661200B6F647 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292DA8DF277A661200B6F647 /* CustomTextField.swift */; };
 		292DA8E2277E2AE500B6F647 /* UpdateBudget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292DA8E1277E2AE500B6F647 /* UpdateBudget.swift */; };
 		293DE6DA2763E6CE00A94A42 /* NewTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293DE6D92763E6CE00A94A42 /* NewTransaction.swift */; };
 		293DE6DD2763ECB400A94A42 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293DE6DC2763ECB400A94A42 /* BlurView.swift */; };
@@ -57,6 +56,10 @@
 		2969AFEA275E9B8500A2F820 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2969AFE9275E9B8500A2F820 /* LoginView.swift */; };
 		29AC8FE02764207700CBC28C /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29AC8FDF2764207700CBC28C /* ListViewModel.swift */; };
 		29AC8FE22764658200CBC28C /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29AC8FE12764658200CBC28C /* HapticManager.swift */; };
+		29AECA7527833DF800675766 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 29AECA7427833DF800675766 /* Charts */; };
+		29AECA7B27833F5F00675766 /* PieChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29AECA7A27833F5F00675766 /* PieChart.swift */; };
+		29AECA7D278342A100675766 /* GraphViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29AECA7C278342A100675766 /* GraphViewModel.swift */; };
+		29AECA7F2783AC1800675766 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29AECA7E2783AC1700675766 /* Launch Screen.storyboard */; };
 		29B913B2276164F00070DF51 /* TransactionImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B913B1276164F00070DF51 /* TransactionImage.swift */; };
 		29B913B427616CF00070DF51 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B913B327616CF00070DF51 /* ListView.swift */; };
 		29B913B7276275C80070DF51 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B913B6276275C80070DF51 /* CustomTabBar.swift */; };
@@ -76,12 +79,24 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		29AECA7927833DFC00675766 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		292DA8D42776511900B6F647 /* BudgetComponent .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BudgetComponent .swift"; sourceTree = "<group>"; };
 		292DA8D62776518D00B6F647 /* BudgetViewMoel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetViewMoel.swift; sourceTree = "<group>"; };
 		292DA8D82776526A00B6F647 /* BudgetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetModel.swift; sourceTree = "<group>"; };
 		292DA8DC277A60C100B6F647 /* NewBudget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBudget.swift; sourceTree = "<group>"; };
-		292DA8DF277A661200B6F647 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		292DA8E1277E2AE500B6F647 /* UpdateBudget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateBudget.swift; sourceTree = "<group>"; };
 		293DE6D92763E6CE00A94A42 /* NewTransaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTransaction.swift; sourceTree = "<group>"; };
 		293DE6DC2763ECB400A94A42 /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
@@ -130,6 +145,10 @@
 		2969AFE9275E9B8500A2F820 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		29AC8FDF2764207700CBC28C /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		29AC8FE12764658200CBC28C /* HapticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticManager.swift; sourceTree = "<group>"; };
+		29AECA7227833DB900675766 /* Charts-master */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "Charts-master"; path = "../../../../../Downloads/Charts-master"; sourceTree = "<group>"; };
+		29AECA7A27833F5F00675766 /* PieChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChart.swift; sourceTree = "<group>"; };
+		29AECA7C278342A100675766 /* GraphViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphViewModel.swift; sourceTree = "<group>"; };
+		29AECA7E2783AC1700675766 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		29B913B1276164F00070DF51 /* TransactionImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionImage.swift; sourceTree = "<group>"; };
 		29B913B327616CF00070DF51 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		29B913B6276275C80070DF51 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomTabBar.swift; path = Budgetstra/Components/HomeViewComponents/CustomTabBar.swift; sourceTree = SOURCE_ROOT; };
@@ -151,6 +170,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29AECA7527833DF800675766 /* Charts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -171,7 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				293DE6DB2763ECA300A94A42 /* BlurView */,
-				292DA8DF277A661200B6F647 /* CustomTextField.swift */,
+				29AECA7A27833F5F00675766 /* PieChart.swift */,
 			);
 			path = Representables;
 			sourceTree = "<group>";
@@ -269,6 +289,7 @@
 				2969AFC4275CA20400A2F820 /* Budgetstra */,
 				2967F75E277F6CB200196B10 /* BudgetstraTests */,
 				2969AFC3275CA20400A2F820 /* Products */,
+				29AECA7327833DF800675766 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -284,6 +305,7 @@
 		2969AFC4275CA20400A2F820 /* Budgetstra */ = {
 			isa = PBXGroup;
 			children = (
+				29AECA7227833DB900675766 /* Charts-master */,
 				295E88F2275EA03E006DCC27 /* Info.plist */,
 				2969AFE7275E9B6300A2F820 /* Resources */,
 				295E88F5275EA61B006DCC27 /* Models */,
@@ -291,6 +313,7 @@
 				2969AFEB275E9BAC00A2F820 /* Components */,
 				2969AFE6275E9B5600A2F820 /* Views */,
 				2969AFC9275CA20600A2F820 /* Assets.xcassets */,
+				29AECA7E2783AC1700675766 /* Launch Screen.storyboard */,
 				2969AFCB275CA20600A2F820 /* Preview Content */,
 			);
 			path = Budgetstra;
@@ -355,8 +378,16 @@
 			children = (
 				29AC8FDF2764207700CBC28C /* ListViewModel.swift */,
 				292DA8D62776518D00B6F647 /* BudgetViewMoel.swift */,
+				29AECA7C278342A100675766 /* GraphViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		29AECA7327833DF800675766 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		29B913B5276275B20070DF51 /* Custom Tabbar */ = {
@@ -395,12 +426,16 @@
 				2969AFBE275CA20400A2F820 /* Sources */,
 				2969AFBF275CA20400A2F820 /* Frameworks */,
 				2969AFC0275CA20400A2F820 /* Resources */,
+				29AECA7927833DFC00675766 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = Budgetstra;
+			packageProductDependencies = (
+				29AECA7427833DF800675766 /* Charts */,
+			);
 			productName = Budgetstra;
 			productReference = 2969AFC2275CA20400A2F820 /* Budgetstra.app */;
 			productType = "com.apple.product-type.application";
@@ -468,6 +503,7 @@
 				295E88E8275E9E97006DCC27 /* Raleway-Light.ttf in Resources */,
 				2969AFCA275CA20600A2F820 /* Assets.xcassets in Resources */,
 				295E88DE275E9E97006DCC27 /* Raleway-MediumItalic.ttf in Resources */,
+				29AECA7F2783AC1800675766 /* Launch Screen.storyboard in Resources */,
 				295E88EF275E9E97006DCC27 /* OFL.txt in Resources */,
 				295E88DC275E9E97006DCC27 /* Raleway-Italic-VariableFont_wght.ttf in Resources */,
 				295E88E5275E9E97006DCC27 /* Raleway-Regular.ttf in Resources */,
@@ -502,6 +538,7 @@
 				295E8900275EB8D2006DCC27 /* LogOnCard.swift in Sources */,
 				292DA8DD277A60C100B6F647 /* NewBudget.swift in Sources */,
 				29B913BF27627F9C0070DF51 /* AccountView.swift in Sources */,
+				29AECA7D278342A100675766 /* GraphViewModel.swift in Sources */,
 				292DA8D92776526A00B6F647 /* BudgetModel.swift in Sources */,
 				29B913BD27627F8F0070DF51 /* GraphView.swift in Sources */,
 				295E88F7275EA633006DCC27 /* SlideShowModels.swift in Sources */,
@@ -516,13 +553,13 @@
 				29B913BB27627F690070DF51 /* BudgetView.swift in Sources */,
 				292DA8D72776518D00B6F647 /* BudgetViewMoel.swift in Sources */,
 				295E88F4275EA132006DCC27 /* FontManager.swift in Sources */,
-				292DA8E0277A661200B6F647 /* CustomTextField.swift in Sources */,
 				295E88FA275EB6EC006DCC27 /* LoginCard.swift in Sources */,
 				29AC8FE02764207700CBC28C /* ListViewModel.swift in Sources */,
 				29B913B9276276B20070DF51 /* TabModel.swift in Sources */,
 				295E8908275FF52B006DCC27 /* DailyBalance.swift in Sources */,
 				293DE6DD2763ECB400A94A42 /* BlurView.swift in Sources */,
 				292DA8D52776511900B6F647 /* BudgetComponent .swift in Sources */,
+				29AECA7B27833F5F00675766 /* PieChart.swift in Sources */,
 				29B913B2276164F00070DF51 /* TransactionImage.swift in Sources */,
 				295E88C3275E9BFE006DCC27 /* SlidingContent.swift in Sources */,
 				2969AFEA275E9B8500A2F820 /* LoginView.swift in Sources */,
@@ -712,6 +749,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -743,6 +781,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -790,6 +829,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		29AECA7427833DF800675766 /* Charts */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Charts;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2969AFBA275CA20300A2F820 /* Project object */;
 }

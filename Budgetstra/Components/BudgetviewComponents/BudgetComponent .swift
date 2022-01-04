@@ -12,6 +12,7 @@ struct BudgetComponent_: View {
     @State var title : String
     @State var budget : Double
     @State var spent : Double?
+    @Binding var currentTab : BudgetViewTab
     
     var body: some View {
         
@@ -26,7 +27,7 @@ HStack{
             
             HStack{
                 
-                Text("$\(String(format: "%.2f", spent ?? 0)) used").lineLimit(1)
+                Text("$\(String(format: "%.2f", spent ?? 0)) \(currentTab == .budget ? "used" : "saved")").lineLimit(1)
                     .font(.custom(FontManager.medium, size: 12))
                 
                 Spacer()
@@ -48,6 +49,6 @@ HStack{
 
 struct BudgetComponent__Previews: PreviewProvider {
     static var previews: some View {
-        BudgetComponent_(title: "Monthly Limit", budget: 5000)
+        BudgetComponent_(title: "Monthly Limit", budget: 5000, currentTab:.constant(.budget))
     }
 }
