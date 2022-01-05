@@ -11,7 +11,7 @@
 		292DA8D72776518D00B6F647 /* BudgetViewMoel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292DA8D62776518D00B6F647 /* BudgetViewMoel.swift */; };
 		292DA8D92776526A00B6F647 /* BudgetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292DA8D82776526A00B6F647 /* BudgetModel.swift */; };
 		292DA8DD277A60C100B6F647 /* NewBudget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292DA8DC277A60C100B6F647 /* NewBudget.swift */; };
-		292DA8E2277E2AE500B6F647 /* UpdateBudget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292DA8E1277E2AE500B6F647 /* UpdateBudget.swift */; };
+		292DA8E2277E2AE500B6F647 /* UpdateBudgetSavingComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292DA8E1277E2AE500B6F647 /* UpdateBudgetSavingComponent.swift */; };
 		293DE6DA2763E6CE00A94A42 /* NewTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293DE6D92763E6CE00A94A42 /* NewTransaction.swift */; };
 		293DE6DD2763ECB400A94A42 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293DE6DC2763ECB400A94A42 /* BlurView.swift */; };
 		295E88C3275E9BFE006DCC27 /* SlidingContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295E88C2275E9BFE006DCC27 /* SlidingContent.swift */; };
@@ -97,7 +97,7 @@
 		292DA8D62776518D00B6F647 /* BudgetViewMoel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetViewMoel.swift; sourceTree = "<group>"; };
 		292DA8D82776526A00B6F647 /* BudgetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetModel.swift; sourceTree = "<group>"; };
 		292DA8DC277A60C100B6F647 /* NewBudget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBudget.swift; sourceTree = "<group>"; };
-		292DA8E1277E2AE500B6F647 /* UpdateBudget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateBudget.swift; sourceTree = "<group>"; };
+		292DA8E1277E2AE500B6F647 /* UpdateBudgetSavingComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateBudgetSavingComponent.swift; sourceTree = "<group>"; };
 		293DE6D92763E6CE00A94A42 /* NewTransaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTransaction.swift; sourceTree = "<group>"; };
 		293DE6DC2763ECB400A94A42 /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
 		295E88C2275E9BFE006DCC27 /* SlidingContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlidingContent.swift; sourceTree = "<group>"; };
@@ -182,7 +182,7 @@
 			children = (
 				292DA8D42776511900B6F647 /* BudgetComponent .swift */,
 				292DA8DC277A60C100B6F647 /* NewBudget.swift */,
-				292DA8E1277E2AE500B6F647 /* UpdateBudget.swift */,
+				292DA8E1277E2AE500B6F647 /* UpdateBudgetSavingComponent.swift */,
 			);
 			path = BudgetviewComponents;
 			sourceTree = "<group>";
@@ -545,7 +545,7 @@
 				293DE6DA2763E6CE00A94A42 /* NewTransaction.swift in Sources */,
 				29B913B427616CF00070DF51 /* ListView.swift in Sources */,
 				29B913B7276275C80070DF51 /* CustomTabBar.swift in Sources */,
-				292DA8E2277E2AE500B6F647 /* UpdateBudget.swift in Sources */,
+				292DA8E2277E2AE500B6F647 /* UpdateBudgetSavingComponent.swift in Sources */,
 				295E8902275FED03006DCC27 /* HomeView.swift in Sources */,
 				295E89102760246B006DCC27 /* TransactionModel.swift in Sources */,
 				295E8912276028F4006DCC27 /* DateTitle.swift in Sources */,

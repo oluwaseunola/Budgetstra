@@ -7,10 +7,12 @@
 
 import SwiftUI
 
-struct UpdateBudget: View {
+struct UpdateBudgetSavingComponent: View {
     
-    @Binding var budget : BudgetModel
+    @State var budget = BudgetModel(title: "", budget: 0)
+    @State var saving = SavingsModel(title: "", total: 0)
     @Binding  var isPresented : Bool
+    @Binding var componentType : BudgetViewTab
     
     @State var amountLabel = ""
     @FocusState var isFocused : Bool
@@ -33,17 +35,19 @@ struct UpdateBudget: View {
             VStack(alignment:.leading){
                 /// MARK: - Title
                 
-                Text(budget.title).font(.custom(FontManager.bold, size: 30)).padding(.top,50)
+                Text((componentType == .budget ? budget.title : saving.title))
+                    .font(.custom(FontManager.bold, size: 30)).padding(.top,50)
                 
-                Text("Budget: $\(String(format: "%.2f", budget.budget))").font(.custom(FontManager.medium, size: 20)).padding(.top,30)
+                Text("\(componentType == .budget ? "Budget" : "Target"): $\(String(format: "%.2f", componentType == .budget ? budget.budget : saving.total))")
+                    .font(.custom(FontManager.medium, size: 20)).padding(.top,30)
                 
                 /// //MARK: - Amount
                 Spacer()
                 
                 VStack{
                     
-                    
                     Group{
+                        
                         ZStack{
                             
                             HStack{
@@ -53,21 +57,19 @@ struct UpdateBudget: View {
                             }
                             
                             
-                            TextField("Amount used", text: $amountLabel, prompt: nil).font(.custom(FontManager.medium, size: 24)).frame(maxWidth:.infinity).frame(height:70).overlay(RoundedRectangle(cornerRadius: 10, style: .continuous).stroke().foregroundColor(.secondary))
+                            TextField(componentType == .budget ? "Amount used" : "Add to savings", text: $amountLabel, prompt: nil)
+                                .font(.custom(FontManager.medium, size: 24))
+                                .frame(maxWidth:.infinity)
+                                .frame(height:70).overlay(RoundedRectangle(cornerRadius: 10, style: .continuous).stroke().foregroundColor(.secondary))
                                 .multilineTextAlignment(.center)
                                 .lineLimit(1)
                                 .keyboardType(.decimalPad)
                                 .focused($isFocused)
                             
-                            
-                            
                         }
                         
                     }
                 }
-                
-                
-                
                 
                 
                 HStack{
@@ -82,18 +84,10 @@ struct UpdateBudget: View {
                     
                     Button {
                         
-                        if let budgetSpent = budget.spent{
-                            
-                            budgetViewModel.updateBudget(updatedObject: BudgetModel(title: budget.title, budget: budget.budget, spent: Double(amountLabel) ?? 0 + budgetSpent))
-                            
-                        }else{
-                            
-                            budgetViewModel.updateBudget(updatedObject: BudgetModel(title: budget.title, budget: budget.budget, spent: Double(amountLabel) ?? 0))
-                        }
                         
-                        isPresented = false
+                        updateComponent()
                         
-                        HapticManager.haptic.impactOccurred()
+                        
                         
                     } label: {
                         
@@ -102,8 +96,6 @@ struct UpdateBudget: View {
                             .mask(RoundedRectangle(cornerRadius: 15, style: .continuous))
                         
                     }
-                    
-                    
                     
                     
                 }.frame(maxWidth:.infinity)
@@ -129,6 +121,55 @@ struct UpdateBudget: View {
             
         }
     }
+    
+    func updateComponent(){
+        
+        switch componentType{
+            
+        case .budget:
+            
+            if var budgetSpent = budget.spent{
+                
+                
+                budgetSpent += Double(amountLabel) ?? 0
+                
+                budget.spent = budgetSpent
+                
+                budgetViewModel.updateBudget(updatedObject: budget)
+                
+            }else{
+                budget.spent = Double(amountLabel) ?? 0
+                
+                budgetViewModel.updateBudget(updatedObject: budget)
+            }
+            
+        case .saving:
+            
+            if var amountSaved = saving.saved{
+                
+                amountSaved += Double(amountLabel) ?? 0
+                
+                saving.saved = amountSaved
+                
+                budgetViewModel.updateSaving(updatedObject: saving )
+                
+            }else{
+                
+                saving.saved = Double(amountLabel) ?? 0
+                
+                budgetViewModel.updateBudget(updatedObject: budget)
+                
+                
+            }
+            
+        }
+        
+        isPresented = false
+        
+        HapticManager.haptic.impactOccurred()
+    }
+    
+    
 }
 
 //struct UpdateBudget_Previews: PreviewProvider {

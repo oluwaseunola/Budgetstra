@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct BudgetComponent_: View {
+struct BudgetSavingTableCell: View {
     
     @State var title : String
     @State var budget : Double
@@ -49,6 +49,6 @@ HStack{
 
 struct BudgetComponent__Previews: PreviewProvider {
     static var previews: some View {
-        BudgetComponent_(title: "Monthly Limit", budget: 5000, currentTab:.constant(.budget))
+        BudgetSavingTableCell(title: "Monthly Limit", budget: 5000, currentTab:.constant(.budget))
     }
 }

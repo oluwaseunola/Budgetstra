@@ -36,6 +36,8 @@ class BudgetViewModel : ObservableObject{
     
     func updateBudget(updatedObject: BudgetModel){
         
+        
+        
         var counter = 0
         
         for budget in budgets{
@@ -44,6 +46,26 @@ class BudgetViewModel : ObservableObject{
             if budget.id == updatedObject.id{
                 
                 budgets[counter-1] = updatedObject
+                
+                
+                
+            }
+            
+        }
+        
+        
+    }
+    
+    func updateSaving(updatedObject: SavingsModel){
+        
+        var counter = 0
+        
+        for saving in savings{
+            counter += 1
+            
+            if saving.id == updatedObject.id{
+                
+                savings[counter-1] = updatedObject
                 
             }
             
@@ -77,3 +99,4 @@ enum BudgetViewTab {
     case budget,saving
     
 }
+
